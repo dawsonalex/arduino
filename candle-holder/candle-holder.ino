@@ -1,15 +1,3 @@
-/*
-copyright 2007 Mike Edwards
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; version 2 of the License.
- 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-*/
 #include <math.h>
 
 #include <Adafruit_NeoPixel.h>
@@ -44,9 +32,6 @@ long starTime[CNT];
 
 int firstHue = 0;
 
-#define TEMP_THRESHOLD 22
-
-
 void _setup() {
   # if defined(DEBUG) || defined(DEBUG_TEMP)
   Serial.begin(9600);
@@ -66,20 +51,10 @@ void _setup() {
 
 void setup()
 {
-  // // # ifdef DEBUG
-  // Serial.begin(9600);
-  // // # endif
-
-  // pinMode(6,OUTPUT);
-
-  // randomSeed(analogRead(A0));
-  // show = int(random(SHOW_FLAME, SHOW_RAINBOW+1));
-  // firstHue = random(0, 65535);
   _setup();
 }
 
-#define TEMP_DELTA_T 1000 
-// #define RATE_OF_CHANGE_THRESHOLD
+#define TEMP_DELTA_T 1000
 
 double temp1 = 0;
 double temp2 = 0;
